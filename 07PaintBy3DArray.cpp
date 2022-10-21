@@ -15,23 +15,8 @@ const int RGB = 3; // each RGB pixel contains 3 values: red, green, blue
 
 //Function declarations
 void pixelByPixel(int arrayToModify[][COLS][RGB]);
-//Precondition: global constants COLS and RGB are initialized to a value
-//arrayToModify is a 3D int array containing ROWS rows, COLS columns, and RGB pixels
-//Postcondition: prompts user to fill in values for each element in arrayToModify
-//arrayToModify is updated automatically in main since arrays are passed by reference
-
-
 void writeImageToFile(int arrayToOutput[][COLS][RGB], string outputfilename);
-//Precondition: global constants COLS and RGB are initialized to a value
-//arrayToOutput is a 3D int array containing ROWS rows, COLS columns, and RGB pixels
-//arrayToOutput has all values initialized to pixels between 0 and 255
-//Postcondition: outputs arrayToOutput as a properly formatted ppm image
-//with the filename specified by the user
-
 void paintRedImage(int arrayToOutput[][COLS][RGB]);
-//Precondition: global constants COLS and RGB are initialized to a value
-//arrayToOutput is a 3D int array containing ROWS rows, COLS columns, and RGB pixels
-//Postcondition: sets each pixel of the image to red with RGB value (255, 0, 0)
 
 //  add paintBlueImage, paintYellowImage, paintCheckerboardImage
 // declarations with preconditions and postconditions
@@ -134,7 +119,10 @@ int main() {
     return 0;
 }
 
-
+/**
+ * Allows the user to create a 4 x 4 image one pixel at a time
+ * @param arrayToModify The array that hold the image pixels
+ */
 void pixelByPixel(int arrayToModify[][COLS][RGB])
 {
     cout << "Let's start painting."
@@ -178,7 +166,10 @@ void pixelByPixel(int arrayToModify[][COLS][RGB])
     cout << "Painting complete.  Returning to main." << endl << endl;
 }
 
-
+/**
+ * Creates a 4 x 4 red image
+ * @param arrayToOutput the array that holds the image pixel data
+ */
 void paintRedImage(int arrayToOutput[][COLS][RGB])
 {
     cout << endl << "Setting all pixels to red... " << endl;
@@ -197,6 +188,12 @@ void paintRedImage(int arrayToOutput[][COLS][RGB])
     cout << "Red image has been painted.  Returning to main." << endl;
 }
 
+
+/**
+ * Writes the image to a file
+ * @param arrayToOutput Array holding the image pixel data
+ * @param outputfilename Name the file will be saved under.
+ */
 void writeImageToFile(int arrayToOutput[][COLS][RGB], string outputfilename)
 {
     ofstream outFile;
