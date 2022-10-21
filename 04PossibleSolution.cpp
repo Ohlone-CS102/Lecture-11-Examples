@@ -6,39 +6,35 @@
 #include <iomanip>
 
 void getHoursAndPayRate( double hours[], double payRate[]);
-//Precondition: hours[] and payRate[] are 1D arrays of size NUM_EMPLOYEES
-//Postcondition: prompts user for hours and pay data for each of the NUM_EMPLOYEES
-//inputs data for employee i to index i of hours[] and index i of payRate[]
-
-void displayGrossPay(double hours[], double payRate[]);
-//Precondition: hours[] and payRate[] are 1D arrays of size NUM_EMPLOYEES
-//hours and payRate are initialized fully
-//Postcondition: multiplies hours and payRate to determine gross pay for each
-//employee.  Outputs employee gross pay data to screen.
+void displayGrossPay(const double hours[], const double payRate[]);
 
 const int NUM_EMPLOYEES = 5;    //number of employees
 
 using namespace std;
 
-int main()
-{
+int main() {
 
     double hours[NUM_EMPLOYEES];       // holds hours worked
     double payRate[NUM_EMPLOYEES];   //holds pay rate
     
-//call getHoursAndPayRate
-getHoursAndPayRate(hours, payRate);
+    //call getHoursAndPayRate
+    getHoursAndPayRate(hours, payRate);
 
-//Display each employee's gross pay
-//call displayGrossPay
+    //Display each employee's gross pay
+    //call displayGrossPay
 
-displayGrossPay(hours, payRate);
+    displayGrossPay(hours, payRate);
 
 
     return 0;
 }
 
-
+/**
+ * Collects the hours and payrate for employees
+ * @param hours Array reference for storing the number of hours worked for each employee
+ * @param payRate Array reference for storing the payrate for each employee
+ * @see Precondition: NUM_EMPLOYEES must be initialized to the size of the array
+ */
 void getHoursAndPayRate( double hours[], double payRate[])
 {
     cout << "Enter the hours worked by " << NUM_EMPLOYEES
@@ -59,7 +55,14 @@ void getHoursAndPayRate( double hours[], double payRate[])
     }
 }
 
-void displayGrossPay(double hours[], double payRate[])
+
+/**
+ * Outputs the gross pay to
+ * @param hours array holding the number of hours worked
+ * @param payRate array holding the payRate for each employee
+ * @see Precondition: NUM_EMPLOYEES must be initialized to the size of the array
+ */
+void displayGrossPay(const double hours[], const double payRate[])
 {
     cout << "Here is the gross pay for each employee: \n";
     cout << fixed << showpoint << setprecision(2);
