@@ -30,6 +30,9 @@ int main() {
         }
         cout << endl; //make a space for next row.
     }
+
+
+
     cout << endl << "Now let's update our array so that each is numbered from 0 to "
          << (MAX_ROWS * MAX_COLS - 1) << endl;
 
@@ -46,9 +49,11 @@ int main() {
         cout << endl; //make a space for next row.
     }
 
+
+
     cout << endl << "Let's do the same thing but in reverse... " << endl;
 
-    number = (MAX_ROWS * MAX_COLS) - 1;  //set number to highest value and count down
+    number = (MAX_ROWS * MAX_COLS) - 1;  //set number to the highest value and count down
 
     for (int row = 0; row < MAX_ROWS; row++) {
         cout << "Row # " << row << ":\t";
@@ -62,10 +67,10 @@ int main() {
     }
 
 
+
     cout << endl << "Let's get fancy and add a border of zeroes in the perimeter." << endl;
 
-    number = (MAX_ROWS * MAX_COLS) - 1;  //set number to highest value and count down
-
+    number = (MAX_ROWS * MAX_COLS) - 1;  //set number to the highest value and count down
 
     for (int row = 0; row < MAX_ROWS; row++) {
         cout << "Row # " << row << ":\t";
@@ -75,9 +80,9 @@ int main() {
                 myGrid[row][col] = 0;  //if we are in a border element, set equal to zero
                 cout << myGrid[row][col] << "\t";  //output to screen
             } else {
-            myGrid[row][col] = number;  //number each element
-            cout << myGrid[row][col] << "\t";  //output to screen
-             }
+                myGrid[row][col] = number;  //number each element
+                cout << myGrid[row][col] << "\t";  //output to screen
+            }
             number--;  //increment number
 
         }
